@@ -34,7 +34,7 @@ done
 TOOLCHAIN_PATH="/pinf"
 
 # @credit http://stackoverflow.com/a/246128/330439
-BASE_PATH="$(cd "$(dirname "$0")"; pwd)/pinf-install"
+BASE_PATH="$(cd "$(dirname "$0")"; pwd)/pinf-it-install"
 
 if [ ! -d "$BASE_PATH" ]; then
 	mkdir $BASE_PATH
