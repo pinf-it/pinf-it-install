@@ -132,7 +132,10 @@ if [ ! -d "$TOOLCHAIN_PATH" ]; then
 	fi
 	if [ $? -ne 0 ] ; then
 		exit 1
-	fi	
+	fi
+	if [ -z "$DEBUG" ]; then
+		rm -Rf $BASE_PATH
+	fi
 else
 	echo "You already have an install at: $SM_HOME"
 fi
