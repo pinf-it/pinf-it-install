@@ -1,17 +1,20 @@
 {
-	"uid": "https://github.com/pinf-it/pinf-it-install",
-	"name": "pinf-it-install",
-	"version": "0.1.0",
-	"pm": "sm",
-	"publish": true,
-	"scripts": {
-		"publish": "node ./scripts/publish.js"
-	},
-	"devDependencies": {
-		"pinf": "~0.2.16",
-		"knox": "~0.5.3"
-	},
-	"devMappings": {
-		"node-osx-64": ["archive", "http://nodejs.org/dist/v0.10.0/node-v0.10.0-darwin-x64.tar.gz"]
-	}
+    "uid": "https://github.com/pinf-it/pinf-it-install",
+    "name": "pinf-it-install",
+    "version": "0.1.1",
+    "pm": "sm",
+    "publish": true,
+    "scripts": {
+        "publish": "node ./scripts/publish.js"
+    },
+    "devDependencies": {
+        "pinf": "~0.2.16",
+        "knox": "~0.5.3"
+    },
+    "devMappings": {
+        "node-osx-64": [
+            "archive",
+            "http://nodejs.org/dist/v0.10.0/node-v0.10.0-darwin-x64.tar.gz"
+        ]
+    }
 }
