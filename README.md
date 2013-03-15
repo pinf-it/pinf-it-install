@@ -8,4 +8,4 @@ Install Instructions
 
 **Mac OSX:**
 
-	curl https://raw.github.com/pinf/pinf-it-install/master/pinf-it-install-osx.sh | sh
+	curl -s https://raw.github.com/pinf/pinf-it-install/master/pinf-it-install-osx.sh | sh

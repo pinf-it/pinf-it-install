@@ -122,10 +122,8 @@ if [ ! -d "$TOOLCHAIN_PATH" ]; then
 	fi
 	if [ $? -ne 0 ] ; then
 		exit 1
-	fi	
-	if [ ! -f "$SM_HOME/profiles/default/credentials.json" ]; then
-		cp $BASE_PATH/profiles/default/credentials.json $SM_HOME/profiles/default/credentials.json
 	fi
+	cp $BASE_PATH/profiles/default/credentials.json $SM_HOME/profiles/default/credentials.json
 	echo "Installing 'sm' on PATH:"
 	if [ -z "$DEBUG" ]; then
 		sudo $SM_BIN_PATH --install-command
