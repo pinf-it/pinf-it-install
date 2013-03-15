@@ -49,7 +49,7 @@ cd node_modules;
 
 if [ ! -f "node.tar.gz" ]; then
 	echo "Downloading NodeJS (Server-Side JavaScript Runtime):"
-    curl -# -o node.tar.gz http://nodejs.org/dist/v0.10.0/node-v0.10.0-darwin-x64.tar.gz
+    curl -# -o node.tar.gz https://s3.amazonaws.com/s3.sourcemint.org/github.com/pinf-it/pinf-it-install/-archives/node-v0.10.0-darwin-x64.tar.gz
 fi
 if [ ! -d "node" ]; then
 	mkdir node
