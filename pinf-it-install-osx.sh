@@ -60,10 +60,10 @@ do
     esac
 done
 
-TOOLCHAIN_PATH="$TOOLCHAIN_ROOT/$TOOLCHAIN_NAME"
+TOOLCHAIN_PATH="$(cd $TOOLCHAIN_ROOT; pwd)/$TOOLCHAIN_NAME"
 
 # @credit http://stackoverflow.com/a/246128/330439
-BASE_PATH="$(cd "$(dirname "$0")"; pwd)/pinf-it-install"
+BASE_PATH="$(cd "$(dirname "$0")"; pwd)/.pinf-it-install"
 
 if [ ! -d "$BASE_PATH" ]; then
 	mkdir $BASE_PATH
@@ -163,15 +163,17 @@ if [ ! -d "$TOOLCHAIN_PATH" ]; then
 	fi
 	# Copy credentials used while setting up toolchain so that toolchain does not ask for them again.
 	cp $BASE_PATH/profiles/default/credentials.json $SM_HOME/profiles/default/credentials.json
-	echo "Installing 'sm' on PATH:"
-	if [ -z "$DEBUG" ]; then
-		sudo $SM_BIN_PATH --install-command
-	else
-		sudo $SM_BIN_PATH --install-command --debug
-	fi
-	if [ $? -ne 0 ] ; then
-		exit 1
-	fi
+	# NOTE: We should not install anything outside of the created toolchain.
+	# DO NOT UNCOMMENT:
+	#echo "Installing 'sm' on PATH:"
+	#if [ -z "$DEBUG" ]; then
+	#	sudo $SM_BIN_PATH --install-command
+	#else
+	#	sudo $SM_BIN_PATH --install-command --debug
+	#fi
+	#if [ $? -ne 0 ] ; then
+	#	exit 1
+	#fi
 	if [ -z "$DEBUG" ]; then
 		rm -Rf $BASE_PATH
 	fi
@@ -183,6 +185,6 @@ echo ""
 echo "Success! Opening 'http://mac.pinf.it/intro' to get you started."
 echo ""
 
-open http://mac.pinf.it/intro
+open http://mac.pinf.it/intro?TOOLCHAIN_PATH=$TOOLCHAIN_PATH
 
 exit 0
